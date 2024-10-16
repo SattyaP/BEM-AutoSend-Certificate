@@ -1,0 +1,77 @@
+{
+  "name": "auto-sendcertificate",
+  "version": "1.0.0",
+  "description": "An software for assets BEM to send certificate",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SattyaP/auto-sendcertificate.git"
+  },
+  "keywords": [
+    "emailsender",
+    "sendemail",
+    "certificate",
+    "automation"
+  ],
+  "author": "SattyaP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SattyaP/auto-sendcertificate/issues"
+  },
+  "homepage": "https://github.com/SattyaP/auto-sendcertificate#readme",
+  "dependencies": {
+    "@sattyap/builder-electron": "^1.0.6",
+    "electron-log": "^5.1.6",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^6.2.1",
+    "nodemailer": "^6.9.15",
+    "path": "^0.12.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.3.0",
+    "@electron-forge/maker-deb": "^6.3.0",
+    "@electron-forge/maker-rpm": "^6.3.0",
+    "@electron-forge/maker-squirrel": "^6.3.0",
+    "@electron-forge/maker-zip": "^6.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.3.0",
+    "electron": "31.2.1",
+    "electron-builder": "^24.13.3",
+    "javascript-obfuscator": "^4.1.1"
+  },
+  "build": {
+    "appId": "BEM AutoSend Certificate",
+    "productName": "BEM AutoSend Certificate",
+    "compression": "maximum",
+    "copyright": "Copyrights 2024 Alsav System",
+    "publish": {
+      "provider": "github",
+      "owner": "SattyaP",
+      "repo": "BEM-AutoSend-Certificate",
+      "private": false
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/logos.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true,
+      "createDesktopShortcut": true
+    },
+    "files": [
+      "!.gitignore",
+      "!.npmrc",
+      "!dev/**/*",
+      "!.prettierrc"
+    ],
+    "directories": {
+      "output": "build"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEM - Send Certificate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body class="position-relative">
+    <div id="warp" class="overlay mx-auto px-lg-4 px-md-4 px-sm-4 hidden">
+        <div class="col-lg-4 col-md-6 col-sm-6" id="notification">
+            <p id="message" class="mb-2"></p>
+            <div id="warp-loader" class="mb-2 hidden">
+                <div class="progress bg-secondary rounded overflow-hidden">
+                    <div id="download-progress" class="progress-bar bg-primary" role="progressbar" style="width: 0%"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div id="spinner">
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+            </div>
+            <button id="restart-button" type="button" class="hidden btn btn-primary">
+                Restart
+            </button>
+        </div>
+    </div>
+
+    <header class="sticky-top bg-primary">
+        <nav class="container py-3 align-items-center">
+            <h5 class="text-white mt-1">BEM Auto Send Certificate <span id="version"></span></h5>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-4">
+
+            <div class="d-flex justify-content-between gap-3">
+                <div class="mb-3 w-100">
+                    <label for="" class="form-label">Data File</label>
+                    <input type="file" name="data" id="data" accept=".xlsx" class="form-control" />
+                </div>
+
+                <div class="mb-3 w-100">
+                    <label for="" class="form-label">Compose Email</label>
+                    <input type="file" name="file_peserta" id="file_peserta" class="form-control" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Path Folder Certificate</label>
+                <input type="text" name="certificate" id="certificate" class="form-control"
+                    placeholder="C:Users/Pictures/" />
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Header Email</label>
+                <input type="input" name="heading" id="heading_email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Body Text</label>
+                <textarea rows="4" name="body" id="body_email" class="form-control"></textarea>
+            </div>
+
+            <div class="d-flex gap-2 align-items-center mb-3">
+                <div class="progress w-100" role="progressbar" aria-label="Animated striped" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <div id="progs" class="progress-bar bg-primary progress-bar-striped progress-bar-animated">
+                        0%
+                    </div>
+                </div>
+                <button type="button" id="start" class="btn btn-primary" disabled>Start</button>
+                <button type="button" id="stop" class="btn btn-danger hidden">Stop</button>
+            </div>
+            <textarea readonly style="font-size: 16px" class="form-control" id="log" rows="6"></textarea>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container py-2">
+            <p class="text-center text-secondary">© 2024 BEM STIKI MALANG</p>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+    <script src="renderer.js"></script>
+    <script src="https://kit.fontawesome.com/03734f8551.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
