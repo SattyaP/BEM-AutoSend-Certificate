@@ -2,9 +2,11 @@
   "name": "auto-sendcertificate",
   "version": "1.0.0",
   "description": "An software for assets BEM to send certificate",
-  "main": "src/main.js",
+  "main": "dist/src/main.js",
   "scripts": {
-    "start": "electron-forge start"
+    "start": "electron-forge start",
+    "deploy": "node build.js && npx electron-builder -p always",
+    "build": "npx electron-builder build --win"
   },
   "repository": {
     "type": "git",

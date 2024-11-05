@@ -145,9 +145,9 @@ ipcMain.on(START_EVENT, async (event, arg) => {
         event.reply(updateProggressEvent, progress);
     };
 
-    log('Process started');
+    log('[INFO] Process started');
     event.reply(START_EVENT);
     await startProcess(log, progress, arg);
     event.reply(STOP_EVENT);
-    log('Process completed');
+    log('[INFO] Process completed');
 });
